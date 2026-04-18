@@ -67,7 +67,7 @@ resources/views/bukus/index.blade.php — Tampilan halaman depan.
 
 public/css/style.css — Pengaturan gaya desain website.
 
-💡 Tips untuk Tasykia
+💡 Tips untuk pemula
 PHP 8.2: Karena menggunakan PHP 8.2, pastikan ekstensi pdo_mysql sudah aktif di file php.ini XAMPP kamu.
 
 Pengembangan: Kamu bisa mencoba menambahkan fitur Search atau Validasi Foto agar aplikasi ini semakin keren.
