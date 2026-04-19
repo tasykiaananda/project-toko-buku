@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Buku extends Model
 {
-    // Kita definisikan kolom mana saja yang boleh diisi
-    protected $fillable = ['judul', 'penulis', 'harga', 'deskripsi', 'gambar'];
+    // Ini bagian yang paling penting agar kolom tersimpan
+    protected $fillable = ['judul', 'penulis', 'harga', 'deskripsi'];
 }
