@@ -3,39 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Daftar Buku</title>
-    <style>
-        body { font-family: sans-serif; padding: 20px; color: #000; }
-        .container { max-width: 800px; margin: 0 auto; border: 1px solid #000; padding: 20px; }
-        
-        /* Form & Tabel Sederhana */
-        input, textarea { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #000; box-sizing: border-box; }
-        button { background: #000; color: #fff; border: none; padding: 8px 15px; cursor: pointer; }
-        
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th { background: #000; color: #fff; text-align: left; padding: 10px; }
-        td { border: 1px solid #000; padding: 10px; }
-        
-        /* Link Aksi */
-        a, .btn-hapus { color: #000; text-decoration: underline; background: none; border: none; cursor: pointer; padding: 0; }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
 
-<div class="container">
+<div class="main-container">
     <h2>Daftar Buku</h2>
 
-    <form action="{{ route('bukus.store') }}" method="POST">
-        @csrf
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-            <input type="text" name="judul" placeholder="Judul" required>
-            <input type="text" name="penulis" placeholder="Penulis" required>
-            <input type="number" name="harga" placeholder="Harga" required>
-        </div>
-        <textarea name="deskripsi" placeholder="Deskripsi"></textarea>
-        <button type="submit">Tambah</button>
-    </form>
+    <div class="input-section">
+        <form action="{{ route('bukus.store') }}" method="POST">
+            @csrf
+            <div class="input-row">
+                <input type="text" name="judul" class="form-control" placeholder="Judul" required>
+                <input type="text" name="penulis" class="form-control" placeholder="Penulis" required>
+                <input type="number" name="harga" class="form-control" placeholder="Harga" required>
+                <input type="text" name="deskripsi" class="form-control" placeholder="Deskripsi">
+                <button type="submit" class="btn-tambah">Tambah Data</button>
+            </div>
+        </form>
+    </div>
 
-    <table>
+    <table class="table-data">
         <thead>
             <tr>
                 <th>Judul</th>
@@ -53,11 +41,13 @@
                 <td>{{ number_format($buku->harga, 0, ',', '.') }}</td>
                 <td>{{ $buku->deskripsi }}</td>
                 <td>
-                    <a href="{{ route('bukus.edit', $buku->id) }}">Edit</a>
-                    <form action="{{ route('bukus.destroy', $buku->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Hapus?')">
-                        @csrf @method('DELETE')
-                        <button type="submit" class="btn-hapus">Hapus</button>
-                    </form>
+                    <div class="action-group">
+                        <a href="{{ route('bukus.edit', $buku->id) }}" class="btn-link">Edit</a>
+                        <form action="{{ route('bukus.destroy', $buku->id) }}" method="POST" onsubmit="return confirm('Hapus?')">
+                            @csrf @method('DELETE')
+                            <button type="submit" class="btn-hapus">Hapus</button>
+                        </form>
+                    </div>
                 </td>
             </tr>
             @endforeach

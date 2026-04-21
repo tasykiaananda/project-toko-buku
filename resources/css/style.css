@@ -1,66 +1,84 @@
 /* public/css/style.css */
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px;
+    background-color: #fdfdfd;
 }
 
-.container {
-    max-width: 600px; /* Dibuat lebih ramping */
+.main-container {
+    max-width: 900px;
     margin: 0 auto;
-    background: #fff;
-    padding: 20px;
-    border: 1px solid #eee; /* Garis tipis saja */
 }
 
-h1, h2 { font-weight: 400; color: #555; }
-
-form { margin-bottom: 30px; }
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
+/* Styling Form */
+.input-section {
+    margin-bottom: 30px;
+    padding: 20px;
     border: 1px solid #ccc;
+    background: #fff;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) auto;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-control {
+    padding: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
     box-sizing: border-box;
 }
 
-button {
-    background-color: #333; /* Warna gelap minimalis */
-    color: white;
-    padding: 10px 20px;
+.btn-tambah {
+    padding: 8px 15px;
+    background: #333;
+    color: #fff;
     border: none;
     cursor: pointer;
 }
 
-button:hover { background-color: #555; }
-
-table { width: 100%; border-top: 2px solid #333; border-collapse: collapse; }
-th, td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-table {
+/* Styling Tabel */
+.table-data {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
     background: #fff;
 }
 
-th, td {
+.table-data th, .table-data td {
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     text-align: left;
 }
 
-th {
-    background-color: #333;
-    color: white;
+.table-data th {
+    background-color: #f4f4f4;
+}
+
+.table-data tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Aksi */
+.action-group {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+}
+
+.btn-hapus {
+    background: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    color: #d00;
 }
